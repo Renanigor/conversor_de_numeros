@@ -13,7 +13,6 @@ def binario_para_decimal():
     for numero in numeros_invalidos:
         if numero in str(numero_binario):
             print('Número inválido')
-            return
         
     #CONVERSÃO DO NÚMERO
     for bit in numero_binario:
@@ -41,7 +40,6 @@ def octal_para_decimal():
     for numero in numeros_invalidos:
         if numero in str(numero_octal):
             print('Número inválido')
-            return
         
     #CONVERSÃO DO NÚMERO
     for numero in numero_octal:
@@ -50,4 +48,3 @@ def octal_para_decimal():
         i += 1
         j -= 1
     print(f'o número octal: {numero_octal_original}, em decimal é: {soma}')
-    return soma

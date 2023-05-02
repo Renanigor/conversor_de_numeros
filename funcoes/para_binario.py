@@ -11,10 +11,9 @@ def octal_para_binario():
     for numero in numeros_invalidos:
         if numero in str(numero_octal):
             print('Número inválido')
-            return
 
     numero_decimal = int(numero_octal, 8)
-    
+
     while numero_decimal > 0:
         resto = numero_decimal % 2
         numero_decimal = numero_decimal // 2
@@ -38,11 +37,12 @@ def decimal_para_binario():
         resto = decimal % 2
         decimal = decimal // 2
         numero_binario.append(resto)
-    
-    numero_binario.reverse()
 
     #FORMA A STRING FINAL
-    for bit in numero_binario:
+    for bit in reversed(numero_binario):
         numero_final += str(bit)
     
     print(f'O número decimal: {decimal_original}, em binário é: {numero_final}')
+
+def hexadecimal_para_binario():
+    pass

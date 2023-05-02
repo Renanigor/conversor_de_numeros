@@ -1,3 +1,4 @@
-from funcoes.funcoes import escolher
+from funcoes.funcoes import escolha
 while True:
-    escolher()
+    escolha()
+    print(" ")

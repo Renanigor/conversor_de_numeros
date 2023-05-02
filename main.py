@@ -1,3 +1,3 @@
-from funcoes import escolher
+from funcoes.funcoes import escolher
 while True:
     escolher()

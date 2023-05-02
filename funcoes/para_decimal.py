@@ -1,37 +1,3 @@
-#ESCOLHER A OPERAÇÃO DE CONVERSÃO
-def escolher():
-    print('Digite [1] DECIMAL -> BINÁRIO, [2] BINÁRIO -> DECIMAL, [3] OCTAL -> DECIMAL')
-    escolha = input('Digite sua opção: ').strip()
-    if escolha == '1':
-        decimal_para_binario()
-    elif escolha == '2':
-        binario_para_decimal()
-    elif escolha == '3':
-        octal_para_decimal()
-    else:
-        print('Digite uma opção válida.')
-
-def decimal_para_binario():
-    
-    #VARIÁVEIS
-    numero_binario = []
-    numero_final = ''
-    decimal = int(input('Digite um número decimal: '))
-    decimal_original = decimal
-
-    while decimal > 0:
-        resto = decimal % 2
-        decimal = decimal // 2
-        numero_binario.append(resto)
-    
-    numero_binario.reverse()
-
-    #FORMA A STRING FINAL
-    for bit in numero_binario:
-        numero_final += str(bit)
-    
-    print(f'O número decimal: {decimal_original}, em binário é: {numero_final}')
-
 def binario_para_decimal():
    
     numero_binario = input('Digite um número binário: ')
@@ -84,3 +50,4 @@ def octal_para_decimal():
         i += 1
         j -= 1
     print(f'o número octal: {numero_octal_original}, em decimal é: {soma}')
+    return soma

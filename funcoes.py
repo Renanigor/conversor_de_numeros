@@ -1,13 +1,15 @@
 #ESCOLHER A OPERAÇÃO DE CONVERSÃO
 def escolher():
-    print('Digite [1] DECIMAL -> BINÁRIO, [2] BINÁRIO -> DECIMAL, [3] DECIMAL -> OCTAL')
+    print('Digite [1] DECIMAL -> BINÁRIO, [2] BINÁRIO -> DECIMAL, [3] OCTAL -> DECIMAL')
     escolha = input('Digite sua opção: ').strip()
     if escolha == '1':
         decimal_para_binario()
     elif escolha == '2':
         binario_para_decimal()
     elif escolha == '3':
-        decimal_para_octal()
+        octal_para_decimal()
+    else:
+        print('Digite uma opção válida.')
 
 def decimal_para_binario():
     
@@ -57,28 +59,28 @@ def binario_para_decimal():
     print(f'o número binário: {numero_binario}, em decimal é: {soma}')
 
 
-def decimal_para_octal():
-   
-    numero_octal = input('Digite um número octal: ')
+def octal_para_decimal():
+    
+    numero_octal_original = input('Digite um número octal: ')
+    numero_octal = list(numero_octal_original)
 
     #VARIÁVEIS
     tamanho_potencia = len(numero_octal)
     i = 0
     j = tamanho_potencia - 1
     soma = 0
-    
-    #VALIDAÇÃO DO NÚMERO
-    numeros_invalidos = ['N']
+
+    # VALIDAÇÃO DO NÚMERO
+    numeros_invalidos = ['8', '9']
     for numero in numeros_invalidos:
         if numero in str(numero_octal):
             print('Número inválido')
             return
         
     #CONVERSÃO DO NÚMERO
-    for bit in numero_octal:
-        resultado = int(bit) * int(numero_octal[i])
-        multiplicacao = 8**j * resultado
-        soma += multiplicacao
+    for numero in numero_octal:
+        resultado = int(numero) * (8**j)
+        soma += resultado
         i += 1
         j -= 1
-    print(f'o número octal: {numero_octal}, em decimal é: {soma}')
+    print(f'o número octal: {numero_octal_original}, em decimal é: {soma}')

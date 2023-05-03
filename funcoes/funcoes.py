@@ -1,5 +1,5 @@
 from funcoes.para_binario import octal_para_binario, decimal_para_binario
-from funcoes.para_decimal import binario_para_decimal, octal_para_decimal
+from funcoes.para_decimal import binario_para_decimal, octal_para_decimal, hexadecimal_para_decimal
 
 
 def escolha():
@@ -24,7 +24,7 @@ def de_binario():
     print('Para qual sistema você quer converter? \n [1] OCTAL \n [2] DECIMAL \n [3] HEXADECIMAL')
     
     escolha = input('Digite uma opção: ').strip()
-    opcao = {'1': 'AINDA ESTAMOS TRABALHANDO NISSO!', '2': binario_para_decimal, '3': 'AINDA ESTAMOS TRABALHANDO NISSO!', '4': 'AINDA ESTAMOS TRABALHANDO NISSO!' }
+    opcao = {'1': 'AINDA ESTAMOS TRABALHANDO NISSO!', '2': binario_para_decimal, '3': 'AINDA ESTAMOS TRABALHANDO NISSO!'}
     
     if escolha in opcao:
         if callable(opcao[escolha]):
@@ -41,7 +41,7 @@ def de_octal():
     print('Para qual sistema você quer converter? \n [1] BINARIO \n [2] DECIMAL \n [3] HEXADECIMAL')
 
     escolha = input('Digite uma opção: ').strip()
-    opcao = {'1': octal_para_binario, '2': octal_para_decimal, '3': 'AINDA ESTAMOS TRABALHANDO NISSO!', '4': 'AINDA ESTAMOS TRABALHANDO NISSO!' }
+    opcao = {'1': octal_para_binario, '2': octal_para_decimal, '3': 'AINDA ESTAMOS TRABALHANDO NISSO!'} 
 
     if escolha in opcao:
         if callable(opcao[escolha]):
@@ -58,8 +58,7 @@ def de_decimal():
     print('Para qual sistema você quer converter? \n [1] BINARIO \n [2] OCTAL \n [3] HEXADECIMAL')
 
     escolha = input('Digite uma opção: ').strip()
-    opcao = {'1': decimal_para_binario, '2': 'AINDA ESTAMOS TRABALHANDO NISSO!', '3': 'AINDA ESTAMOS TRABALHANDO NISSO!', '4': 'AINDA ESTAMOS TRABALHANDO NISSO!' }
-
+    opcao = {'1': decimal_para_binario, '2': 'AINDA ESTAMOS TRABALHANDO NISSO!', '3': 'AINDA ESTAMOS TRABALHANDO NISSO!'}
     if escolha in opcao:
         if callable(opcao[escolha]):
             return opcao[escolha]()
@@ -71,4 +70,18 @@ def de_decimal():
     return
     
 def de_hexadecimal():
+    
+    print('Para qual sistema você quer converter? \n [1] BINARIO \n [2] OCTAL \n [3] DECIMAL')
+
+    escolha = input('Digite uma opção: ').strip()
+    opcao = {'1': 'AINDA ESTAMOS TRABALHANDO NISSO!', '2': 'AINDA ESTAMOS TRABALHANDO NISSO!', '3': hexadecimal_para_decimal}
+
+    if escolha in opcao:
+        if callable(opcao[escolha]):
+            return opcao[escolha]()
+        else:
+            print(opcao[escolha])
+    else:
+        print('Digite um número de sistema válido.')
+
     return

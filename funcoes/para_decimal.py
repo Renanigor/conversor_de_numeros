@@ -48,3 +48,22 @@ def octal_para_decimal():
         i += 1
         j -= 1
     print(f'o número octal: {numero_octal_original}, em decimal é: {soma}')
+
+def hexadecimal_para_decimal():
+    
+    numero_hexadecimal_original = input('Digite um número hexadecimal: ')
+    numero_hexadecimal = list(numero_hexadecimal_original)
+
+    #VARIÁVEIS
+    tamanho_potencia = len(numero_hexadecimal)
+    i = 0
+    j = tamanho_potencia - 1
+    soma = 0
+
+    #CONVERSÃO DO NÚMERO
+    for numero in numero_hexadecimal:
+        resultado = int(numero, 16) * (16**j)
+        soma += resultado
+        i += 1
+        j -= 1
+    print(f'o número hexadecimal: {numero_hexadecimal_original}, em decimal é: {soma}')

@@ -9,18 +9,19 @@ def binario_para_decimal():
     soma = 0
     
     #VALIDAÇÃO DO NÚMERO
-    numeros_invalidos = ['2', '3', '4', '5,' '6', '7', '8,' '9']
+    numeros_invalidos = ['2', '3', '4', '5', '6', '7', '8', '9']
     for numero in numeros_invalidos:
         if numero in str(numero_binario):
             print('Número inválido')
+            return
         
     #CONVERSÃO DO NÚMERO
     for bit in numero_binario:
-        resultado = int(bit) * int(numero_binario[i])
-        multiplicacao = 2**j * resultado
+        multiplicacao = 2**j * int(bit)
         soma += multiplicacao
         i += 1
         j -= 1
+
     print(f'o número binário: {numero_binario}, em decimal é: {soma}')
 
 
@@ -40,6 +41,7 @@ def octal_para_decimal():
     for numero in numeros_invalidos:
         if numero in str(numero_octal):
             print('Número inválido')
+            return
         
     #CONVERSÃO DO NÚMERO
     for numero in numero_octal:
@@ -66,4 +68,5 @@ def hexadecimal_para_decimal():
         soma += resultado
         i += 1
         j -= 1
+
     print(f'o número hexadecimal: {numero_hexadecimal_original}, em decimal é: {soma}')

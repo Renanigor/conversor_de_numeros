@@ -53,13 +53,6 @@ def hexadecimal_para_binario():
     numero_binario = []
     numero_final = ''
 
-    # VALIDAÇÃO DO NÚMERO
-    numeros_invalidos = ['8', '9']
-    for numero in numeros_invalidos:
-        if numero in str(numero_hexadecimal):
-            print('Número inválido')
-            return
-
     numero_decimal = int(numero_hexadecimal, 16)
 
     while numero_decimal > 0:
